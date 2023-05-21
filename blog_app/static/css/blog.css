@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, sans-serif;
+}
+
+a {
+    color: #00abff;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: normal;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px 0;
+}
+
+h2 {
+    font-weight: normal;
+    margin: 30px 0 0;
+}
+
+/* NEW */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Content Section */
+#content {
+    flex-basis: 60%;
+    padding: 0 30px;
+}
+
+#content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0F4C81;
+}
+
+#content h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #0F4C81;
+}
+
+#content .tags {
+    margin-bottom: 10px;
+}
+
+#content .date {
+    color: #ccc;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#content p {
+    margin-bottom: 20px;
+}
+
+/* Sidebar */
+#sidebar {
+    flex-basis: 30%;
+    padding: 10px;
+    background: #1a1a1a;
+    color: white;
+}
+
+#sidebar h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #0F4C81;
+}
+
+#sidebar p {
+    margin-bottom: 10px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 5px;
+}
+
+/* Pagination */
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+    color: white;
+}
+
+/* Forms */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    color: white;
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    margin: 0 0 10px;
+    background: #1a1a1a;
+    border: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: white;
+}
+
+input[type="submit"] {
+    font-weight: bold;
+    background: #0F4C81;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.errorlist {
+    color: #cc0033;
+    padding-left: 10px;
+}
+
+/* Comments */
+.comment {
+    padding: 10px;
+}
+
+.comment:nth-child(even) {
+    background: #1a1a1a;
+}
+
+.comment .info {
+    font-weight: bold;
+    font-size: 12px;
+    color: #ccc;
+}
