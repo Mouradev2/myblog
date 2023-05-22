@@ -1,6 +1,8 @@
 *.json
 db*
 note*
+gitignore/
+
 ### Django ###
 *.log
 *.pot

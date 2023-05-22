@@ -17,7 +17,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=250)
     slug = models.SlugField(
-        max_length=250, unique_for_date='publish')  # Seo url - step 1
+        max_length=250, unique_for_date="publish"
+    )  # Seo url - step 1
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
@@ -31,6 +32,9 @@ class Post(models.Model):
 
     objects = models.Manager()  # The default manager.  # p33
     published = PublishedManager()  # Our custom manager.  # p33
+    image = models.ImageField(
+        upload_to="post_images", blank=True, null=True
+    )  # Add the image field
 
     class Meta:
         ordering = ["-publish"]
@@ -43,18 +47,17 @@ class Post(models.Model):
 
     # build the canonical URL for Post objects
     def get_absolute_url(self):
-        return reverse('blog:post_detail', args=[self.publish.year,
-                                                 self.publish.month,
-                                                 self.publish.day,
-                                                 self.slug])
+        return reverse(
+            "blog:post_detail",
+            args=[self.publish.year, self.publish.month, self.publish.day, self.slug],
+        )
+
     # The tags manager will allow you to add, retrieve, and remove tags from Post objects.
     tags = TaggableManager()
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post,
-                             on_delete=models.CASCADE,
-                             related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
@@ -63,8 +66,10 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ['created']
-        indexes = [models.Index(fields=['created']), ]
+        ordering = ["created"]
+        indexes = [
+            models.Index(fields=["created"]),
+        ]
 
     def __str__(self):
-        return f'Comment by {self.name} on {self.post}'
+        return f"Comment by {self.name} on {self.post}"

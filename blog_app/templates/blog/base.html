@@ -6,22 +6,38 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <!-- <link href="{% static 'css/blog.css' %}" rel="stylesheet"> -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
     <link href="{% static 'css/gpt.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
 </head>
 
+<!-- <div class="header">
+    <nav>
+        <a href="#" class="logo"><img src="static/img/logo.png" id="logo"></a>
+        <div class="toggle-btn" id="btn">
+            <span id="btnText">Dark</span>
+            <img src="static/img/moon.png" id="btnIcon">
+        </div>
+    </nav>
+</div> -->
+
 <body>
+    <div class="header">
+        <nav>
+            <a href="#" class="logo"><img src="static/img/logo-mourad.png" id="logo"></a>
+
+        </nav>
+    </div>
     <div id="content">
         {% block content %}
         {% endblock %}
     </div>
     <div id="sidebar">
-        <h2><a href="{% url 'blog:post_list' %}"> My blog</a></h2> <!-- I added the a tag  -->
-        <p>This is my blog. <br>
-            I've written {% total_posts %} posts so far.
-        </p>
+
         <p>
             <a href="{% url 'blog:post_feed' %}">
                 Subscribe to my RSS feed
@@ -39,6 +55,26 @@
             {% endfor %}
         </ul>
     </div>
+    <script>
+        let btn = document.getElementById("btn")
+        let btnText = document.getElementById("btnText")
+        let btnIcon = document.getElementById("btnIcon")
+        let logo = document.getElementById("logo")
+
+        btn.onclick = function () {
+            document.body.classList.toggle("dark-theme");
+
+            if (document.body.classList.contains("dark-theme")) {
+                btnIcon.src = "static/img/sun.png";
+                btnText.innerHTML = "Light";
+                logo.src = "static/img/logo-white.png"
+            } else {
+                btnIcon.src = "static/img/moon.png";
+                btnText.innerHTML = "Dark";
+                logo.src = "static/img/logo.png"
+            }
+        }
+    </script>
 </body>
 
 </html>
