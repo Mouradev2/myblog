@@ -1,0 +1,190 @@
+* {
+    font-family: 'popping', 'sans-serif';
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #fff;
+    --text-color: #555;
+    --title-color: #000;
+    --link-color: #00abff;
+}
+
+.dark-theme {
+    --background-color: #000;
+    --text-color: #bfeaff;
+    --title-color: yellow;
+    --link-color: #00abff;
+
+}
+
+body {
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+h2 a {
+    color: var(--title-color)
+}
+
+h1 {
+    font-weight: normal;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px 0;
+    color: var(--title-color);
+}
+
+h2 {
+    font-weight: normal;
+    margin: 10px 0 0;
+    color: var(--title-color);
+}
+
+/* Code from portfolio project // heaser - img -navbar */
+.header {
+    width: 100%;
+    max-height: 5% 100px;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    width: 80px;
+}
+
+nav ul {
+    width: 100%;
+    text-align: right;
+    list-style: none;
+    margin-left: 50px;
+
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+
+}
+
+.toggle-btn {
+    background: #6C63FF;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.toggle-btn img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+#content {
+    float: left;
+    width: 60%;
+    padding: 0 0 0 30px;
+}
+
+.post img {
+    height: 200px;
+    /* Set your desired height */
+    object-fit: cover;
+    /* Maintain aspect ratio and crop if necessary */
+    /* margin-bottom: 20px; */
+}
+
+
+#sidebar {
+    float: right;
+    width: 30%;
+    padding: 10px;
+    background: var(--background-color) color: var(--text-color)
+}
+
+p.date {
+    color: #ccc;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+    color: white;
+}
+
+label {
+    float: left;
+    clear: both;
+    color: white;
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    background: var(--background-color);
+    border: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: var(--text-color)
+}
+
+input[type=submit] {
+    font-weight: bold;
+    background: #00abff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.errorlist {
+    color: #cc0033;
+    float: left;
+    clear: both;
+    padding-left: 10px;
+}
+
+.comment {
+    padding: 10px;
+    background-color: #1a1a1a;
+}
+
+.comment:nth-child(even) {
+    background: #1a1a1a;
+}
+
+.comment .info {
+    font-weight: bold;
+    font-size: 12px;
+    color: #ccc;
+}

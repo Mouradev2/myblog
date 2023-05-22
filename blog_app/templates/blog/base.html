@@ -1,5 +1,6 @@
 {% load blog_tags %}
 {% load static %}
+{% load pygments_filters %}
 <!DOCTYPE html>
 <html>
 
@@ -28,7 +29,7 @@
 <body>
     <div class="header">
         <nav>
-            <a href="#" class="logo"><img src="static/img/logo-mourad.png" id="logo"></a>
+            <a href="#" class="logo"><img src="{% static 'img/logo-mourad.png' %}" id="logo"></a>
 
         </nav>
     </div>
